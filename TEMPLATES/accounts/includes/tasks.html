@@ -1,0 +1,42 @@
+
+<strong>{% if column.max_task > 0 %} {{tasks.count}}/{{column.max_task}}{% endif %}</strong>
+
+<div class="mt-3 mb-3">
+    {% for task in tasks %}
+        <div id-task="{{task.id}}" id-column="{{column.id}}" class="rounded shadow-sm p-2 mt-2 task-container">
+
+            <div class="row mx-auto g-1 align-items-center">
+                <div class="col-auto">
+                    <a class="btn btn-primary icon-button">E</a>
+                </div>
+                <div class="col-8">
+                    <textarea class="form-control  task-name" maxlength="150">{{task.name}}</textarea>
+                </div>
+                <div class="col-auto">
+                    <a class="btn btn-danger icon-button remove-task">-</a>
+                </div>
+                {% if column.id < 2 %}
+                <div class="col-auto">
+                    <a id-column="2" class="change-column-button btn btn-secondary icon-button">О</a>
+                </div>
+                {% endif %}
+                {% if column.id > 1 %}
+                <div class="col-auto">
+                    <a id-column="1" class="change-column-button btn btn-secondary icon-button">С</a>
+                </div> 
+                {% endif %}
+                {% if column.id < 3 %}
+                <div class="col-auto">
+                    <a id-column="3" class="change-column-button btn btn-warning icon-button">Д</a>
+                </div>
+                {% endif %}
+                {% if column.id < 4 %}
+                <div class="col-auto">
+                    <a id-column="4" class="change-column-button btn btn-success icon-button">В</a>
+                </div> 
+                {% endif %}
+            </div>
+            
+        </div>
+    {% endfor %}
+</div>

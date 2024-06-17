@@ -1,0 +1,11 @@
+
+
+.icon-button {
+    --bs-btn-padding-y: .35rem; 
+    --bs-btn-padding-x: .35rem; 
+    --bs-btn-font-size: .75rem;
+}
+
+textarea {
+    resize: none;
+}
