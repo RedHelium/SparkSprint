@@ -1,1 +1,6 @@
 /.venv
+docker-compose.yml
+burntasks/settings/prod.py
+__pycache__
+migrations
+*.pyc

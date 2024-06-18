@@ -1,6 +1,6 @@
 from django.db import models
 
-from tasks.managers import TaskManager
+from apps.tasks.managers import TaskManager
 
 # Create your models here.
 

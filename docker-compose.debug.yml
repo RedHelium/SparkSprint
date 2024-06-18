@@ -1,7 +1,5 @@
-version: '3.4'
-
 services:
-  burntasks:
+  sparksprint:
     image: burntasks
     build:
       context: .

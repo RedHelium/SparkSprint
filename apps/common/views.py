@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from tasks.models import TaskColumn
+from apps.tasks.models import TaskColumn
 
 # Create your views here.
 

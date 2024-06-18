@@ -1,5 +1,5 @@
 from django import template
-from tasks.models import Task
+from apps.tasks.models import Task
 
 
 register = template.Library()

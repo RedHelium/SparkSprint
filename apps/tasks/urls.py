@@ -1,6 +1,6 @@
 from django.urls import path
 
-from tasks.views import add_task, remove_all_tasks, remove_column_tasks, remove_task, update_task
+from apps.tasks.views import add_task, remove_all_tasks, remove_column_tasks, remove_task, update_task
 
 urlpatterns = [
     path("tasks/add", add_task, name="add_task"),

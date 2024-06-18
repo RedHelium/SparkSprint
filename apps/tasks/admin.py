@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from tasks.models import Task, TaskColumn
+from apps.tasks.models import Task, TaskColumn
 
 # Register your models here.
 

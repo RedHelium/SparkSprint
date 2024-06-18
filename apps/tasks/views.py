@@ -2,8 +2,8 @@ import json
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import redirect, render
 
-from common.views import home
-from tasks.models import Task, TaskColumn
+from apps.common.views import home
+from apps.tasks.models import Task, TaskColumn
 
 # Create your views here.
 
