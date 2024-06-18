@@ -13,12 +13,14 @@
 {% endblock extra_js %}
 
 {% block content %}
+
     <div class="container-fluid mt-3 mb-3"> 
         <div class="row mx-auto d-flex justify-content-center mt-2 mb-3">
             <div class="col-auto">
                 <div class="btn btn-success speech-button">+</div>
             </div>
         </div>
+        {% include "includes/messages.html" %}
 
         <div class="row ms-5 me-5 mx-auto d-flex justify-content-center">
             {% for column in columns %}

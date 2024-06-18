@@ -4,6 +4,7 @@ from .base import *
 SECRET_KEY = 'django-insecure-0$7fmjig%o+bir9zjyp4f*(yhbjtv(@$440gn_==4%*53#!czj'
 
 DEBUG = True
+SESSION_COOKIE_SECURE = False
 
 ALLOWED_HOSTS = ['127.0.0.1']
 

@@ -1,11 +1,12 @@
-import json
-from django.http import HttpResponse, JsonResponse
-from django.shortcuts import redirect, render
-
+import time
+from django.http import HttpResponse, HttpResponsePermanentRedirect, HttpResponseRedirect
+from django.shortcuts import redirect
 from apps.common.views import home
 from apps.tasks.models import Task, TaskColumn
+from django.contrib import messages 
+from django.contrib.messages import get_messages
 
-# Create your views here.
+
 
 def add_task(request):
     
@@ -16,11 +17,12 @@ def add_task(request):
     current_tasks = Task.objects.filter(column=column).count()
     
     if current_tasks < max_tasks:
-        Task.objects.create(name='New task', column=col)
+        Task.objects.create(name='Новая задача', description='', column=col)
     else:
-        print('Max limit!') #TODO replace on message
+        messages.warning(request, 'В столбце \"%s\" максимальное количество текущих задач.' % (col.name)) 
     
-    return redirect(home)
+    return HttpResponse(request)
+
 
 def update_task(request):
     
@@ -40,15 +42,14 @@ def update_task(request):
         if current_tasks < max_tasks:
             taskObj.column = col
         else:
-            print("Max limit!") #TODO replace on message
-        
-    
+            messages.warning(request, 'В столбце \"%s\" максимальное количество текущих задач.' % (col.name)) 
+
     taskObj.name = name
     taskObj.description = description
     
     taskObj.save()
     
-    return redirect(home)
+    return HttpResponse(request)
     
 
 def remove_task(request):

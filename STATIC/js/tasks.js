@@ -2,6 +2,10 @@
 
 $(document).ready( function() {
 
+    setTimeout(function(){ 
+        $(".messages").hide(); 
+     }, 3000);
+
 
     $(".state-description-button").click( function() {
         var container = $(this).closest(".task-container");
