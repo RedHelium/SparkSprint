@@ -9,3 +9,7 @@
 textarea {
     resize: none;
 }
+
+.task-description {
+    display: none;
+}

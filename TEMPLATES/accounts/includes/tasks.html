@@ -7,7 +7,7 @@
 
             <div class="row mx-auto g-1 align-items-center">
                 <div class="col-auto">
-                    <a class="btn btn-primary icon-button">E</a>
+                    <a class="btn btn-primary icon-button state-description-button">E</a>
                 </div>
                 <div class="col-8">
                     <textarea class="form-control  task-name" maxlength="150">{{task.name}}</textarea>
@@ -15,7 +15,7 @@
                 <div class="col-auto">
                     <a class="btn btn-danger icon-button remove-task">-</a>
                 </div>
-                {% if column.id < 2 %}
+                {% if column.id < 2 or column.id == 3 %}
                 <div class="col-auto">
                     <a id-column="2" class="change-column-button btn btn-secondary icon-button">О</a>
                 </div>
@@ -35,6 +35,9 @@
                     <a id-column="4" class="change-column-button btn btn-success icon-button">В</a>
                 </div> 
                 {% endif %}
+            </div>
+            <div class="row mt-2 mx-auto g-1 align-items-center">
+                <textarea class="form-control  task-description"  placeholder="Описание задачи..." maxlength="600">{{task.description}}</textarea>
             </div>
             
         </div>
